@@ -14,61 +14,57 @@ const quoteDiv = document.querySelector('#quote-box');
 
 // making 10 object of quotes
 const ob1 = {
-    quote: 'hello',
-    source: 'aaa',
+    quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
+    source: 'Nelson Mandela',
 };
 const ob2 = {
-    quote: 'sinha',
-    source: 'sss',
+    quote: 'The way to get started is to quit talking and begin doing',
+    source: 'Walt Disney',
 };
 const ob3 = {
-    quote: 'how ',
-    source: 'ddd',
+    quote: `If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.`,
+    source: 'James Cameron',
 };
 const ob4 = {
-    quote: 'are ',
-    source: 'fff',
+    quote: 'Spread love everywhere you go. Let no one ever come to you without leaving happier',
+    source: 'Mother Teresa',
 };
 const ob5 = {
-    quote: 'you',
-    source: 'ggg',
+    quote: 'The best and most beautiful things in the world cannot be seen or even touched — they must be felt with the heart',
+    source: 'Helen Keller',
 };
 const ob6 = {
-    quote: 'rafiq',
-    source: 'hhh',
+    quote: 'The only impossible journey is the one you never begin.',
+    source: 'Tony Robbins',
 };
 const ob7 = {
-    quote: 'kamal',
-    source: 'jjj',
+    quote: 'Success usually comes to those who are too busy to be looking for it.',
+    source: 'Henry David Thoreau',
 };
 const ob8 = {
-    quote: 'hasib',
-    source: 'kkk',
+    quote: `Whether you think you can or you think you can't, you're right`,
+    source: 'Henry Ford',
 };
 const ob9 = {
-    quote: 'polas',
-    source: 'lll',
+    quote: 'When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.',
+    source: 'Henry Ford',
 };
 const ob10 = {
-    quote: 'bijoy',
-    source: 'zzz',
+    quote: `i didn't fail the test. I just found 100 ways to do it wrong.`,
+    source: 'Benjamin Franklin',
 };
 
 // citation and year add function
 function addCitation(ob) {
-    ob.citation = 'www.youtube.com';
+    ob.citation = 'https://www.fi.edu/benjamin-franklin/famous-quotes';
 }
 
 function addYear(o) {
     o.year = 2000;
 }
-addCitation(ob4);
+addCitation(ob10);
 addYear(ob9);
-addYear(ob5);
-addYear(ob6);
-addYear(ob7);
-addYear(ob8);
-addYear(ob4);
+addYear(ob10);
 
 
 // make an array object
