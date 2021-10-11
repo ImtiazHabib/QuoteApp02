@@ -53,12 +53,16 @@ function addCitation(ob) {
     ob.citation = 'www.youtube.com';
 }
 
-function addYear(ob) {
-    ob.year = '2000';
+function addYear(o) {
+    o.year = 2000;
 }
 addCitation(ob4);
 addYear(ob9);
 addYear(ob5);
+addYear(ob6);
+addYear(ob7);
+addYear(ob8);
+addYear(ob4);
 
 
 // make an array object
@@ -88,24 +92,19 @@ function printQuote(q) {
     // fetch quote information
     var quote = randomQuote.quote;
     var source = randomQuote.source;
-
-    if (randomQuote.citation != '') {
-
-        var citation = randomQuote.citation;
-        console.log(citation);
-
-    } else if (randomQuote.year != '') {
-        var year = randomQuote.year;
-        console.log(year);
-        console.log('yyyyyyyyyyyyyyyy');
-
-
-
-    }
+    var citation = randomQuote.citation;
+    var year = randomQuote.year;
 
     console.log(quote);
     console.log(source);
 
+    if (citation) {
+        console.log(citation);
+    }
+
+    if (year) {
+        console.log(year);
+    }
 
 
 }
