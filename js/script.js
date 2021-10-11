@@ -54,40 +54,61 @@ function addCitation(ob) {
 }
 
 function addYear(ob) {
-    ob.year = 2000;
+    ob.year = '2000';
 }
 addCitation(ob4);
 addYear(ob9);
+addYear(ob5);
+
 
 // make an array object
 var quotes = [ob1, ob2, ob3, ob4, ob5, ob6, ob7, ob8, ob9, ob10];
 
-
+printQuote(quotes);
 
 
 /***
  * `getRandomQuote` function
  ***/
-// declare object type variable
-const randObject = new Object();
-const randObjectResult = new Object();
 
-randObjectResult = getRandomQuote(quotes, randObj)
+// randomQuoteObject = getRandomQuote(quotes);
+function getRandomQuote(quo) {
 
-// create function and send the random number and object array
-function getRandomQuote(obj, randOb) {
-    // create a random number 
-    var randomNumber = Math.random();
-
-    randOb = obj[randomNumber];
-    return randOb;
+    return quo[Math.floor(Math.random() * quo.length)];
 }
 
-console.
 
 /***
  * `printQuote` function
  ***/
+
+function printQuote(q) {
+    var randomQuote = getRandomQuote(q);
+
+    // fetch quote information
+    var quote = randomQuote.quote;
+    var source = randomQuote.source;
+
+    if (randomQuote.citation != '') {
+
+        var citation = randomQuote.citation;
+        console.log(citation);
+
+    } else if (randomQuote.year != '') {
+        var year = randomQuote.year;
+        console.log(year);
+        console.log('yyyyyyyyyyyyyyyy');
+
+
+
+    }
+
+    console.log(quote);
+    console.log(source);
+
+
+
+}
 
 /***
  * click event listener for the print quote button
