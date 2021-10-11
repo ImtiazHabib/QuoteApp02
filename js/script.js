@@ -2,6 +2,12 @@
 project 1 - Random Quote Generator
 ******************************************/
 
+// capture all html elementes
+const quoteChangeButton = document.querySelector('#load-quote');
+const quoteText = document.querySelector('.quote');
+const quoteSource = document.querySelector('.source');
+const quoteCitation = document.querySelector('.citation');
+const quoteDiv = document.querySelector('#quote-box');
 /***
  * `quotes` array
  ***/
@@ -87,6 +93,15 @@ function getRandomQuote(quo) {
  ***/
 
 function printQuote(q) {
+
+    //    check first quotediv has p or not if yes then delete it first and then do add
+
+    if (quoteDiv.children.length != 0) {
+        while (quoteDiv.firstChild) {
+            quoteDiv.firstChild.remove();
+        }
+    }
+
     var randomQuote = getRandomQuote(q);
 
     // fetch quote information
@@ -95,20 +110,61 @@ function printQuote(q) {
     var citation = randomQuote.citation;
     var year = randomQuote.year;
 
-    console.log(quote);
-    console.log(source);
+    if (quote) {
+        //    make html element p
+        const p = document.createElement('p');
+        p.classList.add('quote');
+        p.innerText = quote;
+
+        // add this as quote-box child
+        quoteDiv.appendChild(p);
+    }
+
+    if (source) {
+        //    make html element p
+        const pSource = document.createElement('p');
+        pSource.classList.add('source');
+        pSource.innerText = source;
+
+        // add this as quote-box child
+        quoteDiv.appendChild(pSource);
+    }
 
     if (citation) {
-        console.log(citation);
+        //    make html element span
+        const spanCitation = document.createElement('span');
+        spanCitation.classList.add('citation');
+        spanCitation.innerText = citation;
+
+        // add this as quote-box child
+        quoteDiv.children[1].appendChild(spanCitation);
     }
 
     if (year) {
-        console.log(year);
+        //    make html element span
+        const spanYear = document.createElement('span');
+        spanYear.classList.add('year');
+        spanYear.innerText = year;
+
+        // add this as quote-box child
+        quoteDiv.children[1].appendChild(spanYear);
     }
 
 
 }
 
+
+
+// const quoteCitation = document.querySelector('.quote');
+
+
+
 /***
  * click event listener for the print quote button
  ***/
+quoteChangeButton.addEventListener('click', function (event) {
+    // prevent default
+    event.preventDefault();
+
+    printQuote(quotes);
+})
